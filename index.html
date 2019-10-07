@@ -1,18 +1,523 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>my-first-website</title>
-  <LINK href="styles.css" rel="stylesheet" type="text/css">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>project</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <style>
+ .header {
+ font-weight: 400;
+ /* 文字粗細 */
+ position: relative;
+ /* 定位 */
+ z-index:50;
+ /* Z 方向位置，z-index 數字越大的在越上面，反之則在越下面。 */
+ background-color:#fff;
+ /* 背景顏色 */
+ height: 54px;
+ /* DIV高度設定*/
+ }
+ .header-logo {
+ position: absolute;
+ top: 0;
+ left:40%;
+ right:40%;
+ margin: 0 80px;
+ /* div 邊界間距 */
+ }
+ .header-element {
+ position: relative;
+ z-index: 51;
+ }
+ .header-btn {
+ display: inline-block;
+ /* 類似float 但不需要做clear 
+ 可以設定width 與 height、margin 屬性 */
+ line-height: 50px;
+ vertical-align: top;
+ /* 讓圖片靠上對齊 */
+ padding: 0 5px;
+ /* 控制區域如 DIV 或 span 的內部距離，也可以控制 HTML 的表格內部距離（例如文字或圖片與邊框的距離）
+ ，padding 本身就是內距的設定，padding 是不可以設定負值 */
+ cursor: pointer;
+ /* 改變滑鼠游標 */
+ }
+ .background {
+ width: 100%;
+ height:500px;
+ background-size: cover;
+ background-position: center;
+ background-image: url(https://dgo9uctxwg500.cloudfront.net/images/2334x980/2019_index_banner_menberday_back_f9d00273ab.png);
+ }
+ .sc-eh {
+ position: relative;
+ overflow: hidden;/*圖片過多或是有一段文字放在 div 標籤內，希望限制在某個範圍內，避免破壞版面配置的時候，可以透過overflow設定，讓圖片或文字區塊在固定的範圍內呈現*/
+ max-width: 1200px;
+ margin-left: 315px;
+ padding-bottom: 30px;
+ /* https://www.1keydata.com/css-tutorial/tw//padding.php
+ 可以設定留白，分別為長度、百分比、以及 'auto */
+ }
+ .sc-eh1 {
+ padding-left:95px;
+ /*padding 內距的設定，可以控制區域如 DIV 或 span 的內部距離，也可以控制HTML的表格內部距離（例如文字或圖片與邊框的距離）*/
+ margin-bottom: 30px;
+ /*設定邊界 在邊框之外，且是用來設定各個元素之間的距離*/
+ }
+ .sc-eh1-1 {
+ display: inline-block;
+ /*所有文字或圖片均不換行，也就是全部都會是同一行的意思*/
+ width: 230px;
+ height: 320px;
+ margin: 1em;
+ box-shadow: 0px 6px 6px 0px #eee;/*外框框添加一個或多個陰影*/
+ }
+ .sc-eh1-1-1{
+ display: inline-block;
+ overflow: hidden/*自動隱藏超出的文字或圖片
+ /*圖片過多或是有一段文字放在 div 標籤內，希望限制在某個範圍內，避免破壞版面配置的時候，可以透過overflow設定，讓圖片或文字區塊在固定的範圍內呈現*/
+ }
+ .tile-img {
+ padding: 0 10px;
+ width:200px ;
+ background-size: cover;
+ background-position: center;
+ background-color: #fff;
+ }
+ .tile-subtitle {
+ font-size: 14px;
+ color:rgb(66, 62, 62);
+ }
+ .tile-fans {
+ font-size: 6px;
+ color:gray;
+ }
+ .tile-info {
+ -webkit-box-sizing: border-box;
+ box-sizing: border-box;
+ background-color: #fff;
+ padding: 10px 6px 6px;
+ height: 90px;
+ }
+ 
+ .tildh {
+ 
+ padding: 2px ;
+ text-align:center;
+ margin-bottom: 15px;
+ font-size: 20px;
+ color:gray;
+ }
+ .share {
+ position: relative;
+ overflow: hidden;
+ max-width: 960px;
+ margin-left: auto;
+ margin-right: auto;
+ margin-bottom: 30px;
+ padding-bottom: 30px;
+ padding: 20px;
+ margin: 0 auto 20px;
+ text-align: center
+ }
+ .shat {
+ font-size: 18px;
+ }
+ .shat-1 {
+ padding: 0 25px 25px;
+ }
+ .shat-p {
+ margin-bottom: 8px;
+ line-height: 1.6;
+ }
+ .shat-p-t{
+ font-size: 18px;
+ }
+ .backgroundnotyouwant {
+ background-color:#fcdcd5;
+ height: 80px;
+ font-size: 18px;
+ padding: 25px 15px;
+ text-align: center;
+ }
+ .tile-text {
+ font-size: 15px;
+ color: #f04e2f;
+ margin-bottom: 15px;
+ }
+ .tile-text-1 {
+ display: inline-block;
+ color: #ffffff;
+ background-color: #f04e2f;
+ padding: 8px 50px;
+ border-radius: 30px;/*CSS3圓角border-radius用來設定區塊的圓角效果，可以一次設定四個圓角的值，也可以分別對各個圓角設定不同的値*/
+ cursor: pointer;/*改變滑鼠游標的形狀，設定在文字或圖片上面，當滑鼠移上去時，就可以看到滑鼠游標的形狀*/
+ font-size: 15px;
+ }
+ .footer {
+ height: 250px;
+ background-color: #333;
+ color: #999;
+ font-size: 14px;
+ overflow: hidden;
+ max-height: 500px;
+ }
+ 
+ .footer-wrapper {
+ position: relative;
+ max-width: 960px;
+ margin: 0 auto;
+ padding: 0 15px;
+ }
+ .footer-nav {
+ display: block;
+ }
+ .lang-selector-wrap {
+ float: right;
+ width: 180px;
+ }
+ 
+ .lang-selector {
+ -webkit-appearance: none;
+ border: 0;
+ border-radius: 0;
+ padding: 10px 24px 10px 44px;
+ background-color: transparent;
+ color: inherit;
+ font-size: 16px;
+ line-height: 18px;
+ outline: none;
+ width: 100%;
+ cursor: pointer;
+ }
+ option {
+ font-weight: normal;
+ display: block;
+ white-space: pre;
+ min-height: 1.2em;
+ padding: 0px 2px 1px;
+ }
+ .footer-navlist {
+ text-align: left;
+ }
+ .footer-navlist li {
+ display: inline-block;
+ }
+ .navlink {
+ display: inline-block;
+ padding: 10px 8px;
+ color: #fff;
+ line-height: 20px;
+ }
+ .footer-content {
+ text-align: center;
+ line-height: 2;
+ border-top: 1px solid #666666;
+ padding-top: 20px;
+ }
+ .social-panel {
+ margin: 20px 0;
+ }
+.form{padding-top: 100px;
+      padding-left: 650px;
+      }
+ 
+ </style>
+
 </head>
 
 <body>
+<div class="header">
+<div class="header-logo">
+<a href="https://tw.eztable.com/">
+<img src="https://d1gpbxqmt7wq2i.cloudfront.net/asset/mobile/images/logo/header_logo.png"width="200">
+</a>
+</div>
+<div class="header-element">
+<a href="https://tw.eztable.com/search">
+<div class="header-btn">
+<i class="fafa-search" aria-hidden="true"></i>
+</div>
+<div class="header-btnsearch-bar">
+<span>想訂哪一間餐廳？</span>
+</div>
+</a>
+</div>
+</div>
 
-<img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" id="octocat" alt="octocat-gif" />
+<div class="background">
+   <div class="form">
+    <form>
+        請輸入餐廳名稱<input>
+    </form>
+    日期<input name="setdate" type="date">
+            <form>人數
+              <select name="howmanypeople">
+            　<option value="one">1</option>
+            　<option value="two">2</option>
+            　<option value="three">3</option>
+            　<option value="four">4</option>
+            </select>
+            </form>
+        </div>
+</div>
 
-<!-- Change this code here by copy and pasting your template on line 15 -->
-<p>Welcome to your first GitHub Pages website!</p>
+<div class="sc-eh">
+<h1 class="tildh">主題分類</h1>
+<div id="cc">
+<div class="sc-eh1">
+<div class="sc-eh1-1">
+<a target href="https://tw.eztable.com/channel-list/331?from_ern=channel_list%2F13&from_type=channel_list"> 
+<div class="sc-eh1-1-1">
+<div class="tile-img">
+<img src="https://dgo9uctxwg500.cloudfront.net/images/480x480%23/zh_TW_72c54715b4.png"width="200"height="220"></div>
+<div class="tile-info">
+<p class="tile-subtitle">10 月全台最新餐廳</p>
+<span class="tile-fans">397 位粉絲</span>
+</a>
+</div>
+</div>
+</div>
+<div class="sc-eh1-1">
+<a target href="https://tw.eztable.com/channel-list/331?from_ern=channel_list%2F13&from_type=channel_list">
+<div class="sc-eh1-1-1">
+<div class="tile-img">
+<img src="https://dgo9uctxwg500.cloudfront.net/images/480x480%23/zh_TW_d47d92ff1e.png"width="200"height="220"></div> 
+<div class="tile-info">
+<p class="tile-subtitle">連假就是要好好享受美食啊～吃到飽、牛排、火鍋這裡通通有！</p>
+<span class="tile-fans">420 位粉絲</span>
+</a>
+</div>
+</div>
+</div>
+<div class="sc-eh1-1">
+<a target href="https://tw.eztable.com/channel-list/1906?from_ern=channel_list%2F13&from_type=channel_list">
+<div class="sc-eh1-1-1">
+<div class="tile-img">
+<img src="https://dgo9uctxwg500.cloudfront.net/images/480x480%23/zh_TW_7e0f44f9bc.png"width="200"height="220">
+</div>
+<div class="tile-info">
+<p class="tile-subtitle">想吃美食又不想走太遠？別擔心！這些餐廳離捷運站超近！ </p>
+<span class="tile-fans">402 位粉絲</span>
+</a>
+</div>
+</div>
+</div>
+<div class="sc-eh1-1">
+<a target href="https://https://tw.eztable.com/channel-list/1758?from_ern=channel_list%2F13&from_type=channel_list">
+<div class="sc-eh1-1-1">
+<div class="tile-img">
+<img src="https://dgo9uctxwg500.cloudfront.net/images/480x480%23/zh_TW_fe18ed4e5f.png"width="200"height="220">
+</div>
+<div class="tile-info">
+<p class="tile-subtitle">10/04-10/08 限時5天，限時搶訂</p>
+<span class="tile-fans">353 位粉絲</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+ <h1 class="tildh">精選餐廳</h1>
+ <div class="sc-eh1">
+ <div class="sc-eh1-1">
+<a target href="https://tw.eztable.com/restaurant/13865?from_ern=channel_list%2F14&from_type=channel_list">
+<div class="sc-eh1-1-1">
+<div class="tile-img">
+<img src="https://dgo9uctxwg500.cloudfront.net/images/480x480%23/zh_TW_e17893faf2.png"width="200"height="220">
+</div>
+<div class="tile-info">
+<p class="tile-subtitle">文華Café</p>
+<span class="tile-fans">402 位粉絲</span>
+</a>
+</div>
+</div>
+</div>
+<div class="sc-eh1-1">
+<a target href="https://tw.eztable.com/channel/1895?from_ern=channel_list%2F14&from_type=channel_list">
+<div class="sc-eh1-1-1">
+<div class="tile-img">
+<img src="https://dgo9uctxwg500.cloudfront.net/images/480x480%23/zh_TW_8dda0007fe.png"width="200"height="220" >
+</div>
+<div class="tile-info">
+<p class="tile-subtitle">快速通關・黃金肉品</p>
+<span class="tile-fans">402 位粉絲</span>
+</a>
+</div>
+</div>
+</div>
+ <div class="sc-eh1-1">
+ <a target href="https://tw.eztable.com/channel/1877?from_ern=channel_list%2F14&from_type=channel_list">
+ <div class="sc-eh1-1-1">
+ <div class="tile-img">
+ <img src="https://dgo9uctxwg500.cloudfront.net/images/480x480%23/zh_TW_777c1ce89a.png"width="200"height="220">
+ </div>
+ <div class="tile-info">
+ <p class="tile-subtitle">健康新選擇 預付送飲料
+ </p>
+ <span class="tile-fans">351 位粉絲</span>
+</a>
+ </div>
+ </div>
+ 
+ </div>
+ <div class="sc-eh1-1">
+ <a target href="https://tw.eztable.com/channel/1889?from_ern=channel_list%2F14&from_type=channel_list">
+ <div class="sc-eh1-1-1">
+ <div class="tile-img">
+ <img src="https://dgo9uctxwg500.cloudfront.net/images/480x480%23/zh_TW_4cc085a40f.png"width="200"height="220" >
+ </div>
+ <div class="tile-info">
+ <p class="tile-subtitle">獨家保留位 招牌片皮烤鴨
+ </p>
+ <span class="tile-fans">400 位粉絲</span>
+</a>
+ </div>
+ </div>
+ 
+ </div>
+ </div>
+ <h1 class="tildh">獨家優惠</h1>
 
-</body>
+
+ <h1 class="tildh">EZTABLE</h1>
+ <div class="sc-eh1">
+ <div class="sc-eh1-1">
+ <a target href="https://docs.google.com/forms/d/1BdatTsV5ofY6ELlI864UuifPiea8DYjC8w7G7KrSp0I/viewform?edit_requested=true">
+ <div class="sc-eh1-1-1">
+ <div class="tile-img">
+ <img src="https://dgo9uctxwg500.cloudfront.net/images/480x480%23/zh_TW_0a15e62828.png"width="200">
+ </div>
+ <div class="tile-info">
+ <p class="tile-subtitle">想將流量轉為收益嗎？快加入我們，被動式收入讓你躺著也能賺！
+ </p>
+ <span class="tile-fans">357 位粉絲</span>
+</a>
+ </div>
+ </div>
+ </div>
+ <div class="sc-eh1-1">
+ <a target href="https://docs.google.com/forms/d/1BdatTsV5ofY6ELlI864UuifPiea8DYjC8w7G7KrSp0I/viewform?edit_requested=true">
+ <div class="sc-eh1-1-1">
+ <div class="tile-img">
+ <img src="https://dgo9uctxwg500.cloudfront.net/images/480x480%23/zh_TW_073f943911.png"width="200">
+ </div>
+ <div class="tile-info">
+ <p class="tile-subtitle">壽星專屬優惠！十二廚、漢來海港、一鷺炭火燒鳥等餐廳！立即訂位
+ </p>
+ <span class="tile-fans">1070 位粉絲</span>
+</a>
+ </div>
+ </div>
+ </div>
+ <div class="sc-eh1-1">
+ <a target href="https://tw.eztable.com/channel-list/330?from_ern=channel_list%2F16&from_type=channel_list">
+ <div class="sc-eh1-1-1">
+ <div class="tile-img">
+ <img src="https://dgo9uctxwg500.cloudfront.net/images/480x480%23/zh_TW_311ce833a9.png"width="200">
+ </div>
+ <div class="tile-info">
+ <p class="tile-subtitle">餐廳熱門推薦排行，從飯店Buffet、牛排、日式到火鍋，還有獨家優惠
+ </p>
+ <span class="tile-fans">356 位粉絲</span>
+</a>
+ </div>
+ </div>
+ </div>
+ <div class="sc-eh1-1">
+ <a target href="https://tw.eztable.com/red-envelope/send?from_ern=channel_list%2F16&from_type=channel_list">
+ <div class="sc-eh1-1-1">
+ <div class="tile-img">
+ <img src="https://dgo9uctxwg500.cloudfront.net/images/480x480%23/zh_TW_5dc5c694f8.png"width="200">
+ </div>
+ <div class="tile-info">
+ <p class="tile-subtitle">發紅包人人有獎最高 $150！朋友用餐後你也將獲得 $50 回饋！
+ </p>
+ <span class="tile-fans">397 位粉絲</span>
+</a>
+ </div>
+ </div>
+ </div>
+
+ </div>
+</div>
+
+
+
+<div class="share";>
+ <div class="shat">
+ <div class="shat-1">
+ <p class="shat-p">
+ <span class="shat-p-t" style="color:rgb(255, 0, 0)">
+ 27,244,708
+ </span>
+ 人透過我們訂位，分享了
+ <span class="shat-p-t" style="color:rgb(255, 0, 0)">
+ 455,806
+ </span>
+ 則評論，全亞洲共有
+ <span class="shat-p-t" style="color: rgb(255, 0, 0)">
+ 7,804
+ </span>
+ 家精選餐廳任你挑選
+ </p>
+ 哈囉！想查看你目前有多少 EZCASH？
+ <a href="https://tw.eztable.com/">立即登入</a>
+ </p>
+ </div>
+ </div>
+</div>
+
+
+
+
+<div class="backgroundnotyouwant">
+ 
+ <div class="tile-text" color="#f04e2f">沒有你想要的餐廳頻道嗎？</div>
+ <a class="tile-text-1" href="https://docs.google.com/forms/d/e/1FAIpQLSdfqbLhl9EIOR-mjyg-keMgjKnqhObC8xc3dQLWqPUJrqUy0Q/viewform" target="_blank">請給我們最直接的意見</a>
+</div>
+<div class="footer">
+ 
+ <footer class="footer-wrapper">
+ <div class="footer-nav">
+ <label class="lang-selector-wrap">
+ <i class="fafa-globe" aria-hidden="true"></i>
+ <select class="lang-selector">
+ 
+ <option value="zh_TW">繁體中文</option>
+ <option value="en_US">English</option>
+ <option value="th_TH">ภาษาไทย</option>
+ </select>
+ </label>
+ <nav>
+ <ul class="footer-navlist">
+ <li><a class="navlink" href="https://tw.eztable.com/about">關於</a></li>
+ <li><a class="navlink" href="https://tw.eztable.com/career">人才招募</a></li>
+ <li><a class="navlink" target="_blank" href="http://blog.eztable.com">EZTABLE Blog</a>
+ </li><li><a class="navlink" href="https://tw.eztable.com/terms">服務條款</a></li>
+ <li><a class="navlink" href="https://tw.eztable.com/privacy">隱私權政策</a></li>
+ <li><a class="navlink" target="_blank" href="https://docs.google.com/a/eztable.com/forms/d/e/1FAIpQLScaNU2K8iNg_loJfi7H1SvMbzier-ob39MfTncuAVzxYqT4HA/viewform">餐廳合作</a></li>
+ </ul>
+ </nav>
+ </div>
+ <div class="footer-content">
+ <div>台北市信義區基隆路一段178號5樓</div>
+ <div>taiwan@eztable.com</div>
+ <div>週一至週四 10:00 至 19:00，週五 10：00 至 18：00（例假日及國定假日除外）</div>
+ <div class="social-panel">
+ <a href="https://www.facebook.com/eztablefan" target="_blank" class="social-link">
+ <img width="40" height="40" src="https://d1gpbxqmt7wq2i.cloudfront.net/asset/mobile/images/icons/smedia-facebook.png"></a>
+ <a href="https://www.instagram.com/eztable.tw/" target="_blank" class="social-link">
+ <img width="40" height="40" src="https://d1gpbxqmt7wq2i.cloudfront.net/asset/mobile/images/icons/smedia-instagram.png"></a>
+ <a href="https://www.youtube.com/user/eztabletw" target="_blank" class="social-link">
+ <img width="40" height="40" src="https://d1gpbxqmt7wq2i.cloudfront.net/asset/mobile/images/icons/smedia-youtube.png"></a>
+ <a href="https://twitter.com/BookEZTABLE" target="_blank" class="social-link">
+ <img width="40" height="40" src="https://d1gpbxqmt7wq2i.cloudfront.net/asset/mobile/images/icons/smedia-twitter.png"></a>
+ </div>
+ </div>
+ </footer>
+ </div>
+ </body>
 </html>
