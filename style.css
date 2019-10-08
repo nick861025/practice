@@ -1,0 +1,216 @@
+
+.header {
+font-weight: 400;
+/* 文字粗細 */
+position: relative;
+/* 定位 */
+z-index:50;
+/* Z 方向位置，z-index 數字越大的在越上面，反之則在越下面。 */
+background-color:#fff;
+/* 背景顏色 */
+height: 54px;
+/* DIV高度設定*/
+}
+.header-logo {
+position: absolute;
+top: 0;
+left:40%;
+right:40%;
+margin: 0 80px;
+/* div 邊界間距 */
+}
+.header-element {
+position: relative;
+}
+.header-btn {
+display: inline-block;
+/* 類似float 但不需要做clear 
+可以設定width 與 height、margin 屬性 */
+line-height: 50px;
+vertical-align: top;
+/* 讓圖片靠上對齊 */
+padding: 0 5px;
+/* 控制區域如 DIV 或 span 的內部距離，也可以控制 HTML 的表格內部距離（例如文字或圖片與邊框的距離）
+，padding 本身就是內距的設定，padding 是不可以設定負值 */
+cursor: pointer;
+/* 改變滑鼠游標 */
+}
+.background {
+width: 100%;
+height:500px;
+background-size: cover;
+background-position: center;
+background-image: url(https://dgo9uctxwg500.cloudfront.net/images/2334x980/2019_index_banner_menberday_back_f9d00273ab.png);
+}
+.sc-eh {
+position: relative;
+overflow: hidden;/*圖片過多或是有一段文字放在 div 標籤內，希望限制在某個範圍內，避免破壞版面配置的時候，可以透過overflow設定，讓圖片或文字區塊在固定的範圍內呈現*/
+max-width: 1200px;
+margin-left: 315px;
+padding-bottom: 30px;
+/* https://www.1keydata.com/css-tutorial/tw//padding.php
+可以設定留白，分別為長度、百分比、以及 'auto */
+}
+.sc-eh1 {
+padding-left:95px;
+/*padding 內距的設定，可以控制區域如 DIV 或 span 的內部距離，也可以控制HTML的表格內部距離（例如文字或圖片與邊框的距離）*/
+margin-bottom: 30px;
+/*設定邊界 在邊框之外，且是用來設定各個元素之間的距離*/
+}
+.sc-eh1-1 {
+display: inline-block;
+/*所有文字或圖片均不換行，也就是全部都會是同一行的意思*/
+width: 230px;
+height: 320px;
+margin: 1em;
+box-shadow: 0px 6px 6px 0px #eee;/*外框框添加一個或多個陰影*/
+}
+.sc-eh1-1-1{
+display: inline-block;
+overflow: hidden/*自動隱藏超出的文字或圖片
+/*圖片過多或是有一段文字放在 div 標籤內，希望限制在某個範圍內，避免破壞版面配置的時候，可以透過overflow設定，讓圖片或文字區塊在固定的範圍內呈現*/
+}
+.tile-img {
+padding: 0 10px;
+width:200px ;
+background-size: cover;
+background-position: center;
+background-color: #fff;
+}
+.tile-subtitle {
+font-size: 14px;
+color:rgb(66, 62, 62);
+}
+.tile-fans {
+font-size: 6px;
+color:gray;
+}
+.tile-info {
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+background-color: #fff;
+padding: 10px 6px 6px;
+height: 90px;
+}
+
+.tildh {
+
+padding: 2px ;
+text-align:center;
+margin-bottom: 15px;
+font-size: 20px;
+color:gray;
+}
+.share {
+position: relative;
+overflow: hidden;
+max-width: 960px;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 30px;
+padding-bottom: 30px;
+padding: 20px;
+margin: 0 auto 20px;
+text-align: center
+}
+.shat {
+font-size: 18px;
+}
+.shat-1 {
+padding: 0 25px 25px;
+}
+.shat-p {
+margin-bottom: 8px;
+line-height: 1.6;
+}
+.shat-p-t{
+font-size: 18px;
+}
+.backgroundnotyouwant {
+background-color:#fcdcd5;
+height: 80px;
+font-size: 18px;
+padding: 25px 15px;
+text-align: center;
+}
+.tile-text {
+font-size: 15px;
+color: #f04e2f;
+margin-bottom: 15px;
+}
+.tile-text-1 {
+display: inline-block;
+color: #ffffff;
+background-color: #f04e2f;
+padding: 8px 50px;
+border-radius: 30px;/*CSS3圓角border-radius用來設定區塊的圓角效果，可以一次設定四個圓角的值，也可以分別對各個圓角設定不同的値*/
+cursor: pointer;/*改變滑鼠游標的形狀，設定在文字或圖片上面，當滑鼠移上去時，就可以看到滑鼠游標的形狀*/
+font-size: 15px;
+}
+.footer {
+height: 250px;
+background-color: #333;
+color: #999;
+font-size: 14px;
+overflow: hidden;
+max-height: 500px;
+}
+
+.footer-wrapper {
+position: relative;
+max-width: 960px;
+margin: 0 auto;
+padding: 0 15px;
+}
+.footer-nav {
+display: block;
+}
+.lang-selector-wrap {
+float: right;
+width: 180px;
+}
+
+.lang-selector {
+-webkit-appearance: none;
+border: 0;
+border-radius: 0;
+padding: 10px 24px 10px 44px;
+background-color: transparent;
+color: inherit;
+font-size: 16px;
+line-height: 18px;
+outline: none;
+width: 100%;
+cursor: pointer;
+}
+option {
+font-weight: normal;
+display: block;
+white-space: pre;
+min-height: 1.2em;
+padding: 0px 2px 1px;
+}
+.footer-navlist {
+text-align: left;
+}
+.footer-navlist li {
+display: inline-block;
+}
+.navlink {
+display: inline-block;
+padding: 10px 8px;
+color: #fff;
+line-height: 20px;
+}
+.footer-content {
+text-align: center;
+line-height: 2;
+border-top: 1px solid #666666;
+padding-top: 20px;
+}
+.social-panel {
+margin: 20px 0;
+}
+.form{padding-top: 100px;
+     padding-left: 650px;
+     }
